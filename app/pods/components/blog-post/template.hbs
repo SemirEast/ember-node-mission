@@ -1,0 +1,19 @@
+<div>
+    <span>{{post.title}}</span>
+    <span>{{moment-format post.publishDate 'DD-MM-YYYY'}}</span>
+</div>
+<div>
+    {{#if isExpandedUpdate}}
+        {{textarea value=post.text}}
+    {{else}}
+    <p>
+        {{post.text}}
+    </p>
+    {{/if}}
+</div>
+<div>
+    <button {{action onDelete}}>Delete</button>
+    <button {{action (toggle "isExpandedUpdate" this)}} {{action "updatePost" isExpandedUpdate post}}>
+        {{if isExpandedUpdate "Update" "Edit"}}
+    </button>
+</div>

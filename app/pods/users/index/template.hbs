@@ -1,0 +1,9 @@
+<center><h1>Authors</h1></center>
+<div class="cards-wrapper">
+    {{#each model as |user|}}
+        {{#card-item}}
+            {{card-item/image img=user.image}}
+            {{card-item/details user=user showIcons=true}}
+        {{/card-item}}
+    {{/each}}
+</div>

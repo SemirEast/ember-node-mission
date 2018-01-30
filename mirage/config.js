@@ -1,5 +1,15 @@
 export default function() {
 
+  this.namespace = '/api';
+
+  this.get('/users');
+  this.get('/blogs');
+  this.get('/users/:id');
+  this.del('/users/:id');
+  this.patch('/users/:id');
+  this.get('/blogs/:id');
+  this.del('/blogs/:id');
+  this.patch('/blogs/:id');
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

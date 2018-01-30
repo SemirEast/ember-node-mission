@@ -1,0 +1,29 @@
+<div>
+    <span>{{user.fullName}}, {{user.age}}</span>
+    <span>From: {{user.city}}</span>
+    <span>{{user.jobTitle}}</span>
+    {{!-- <span>{{user.city}}</span> --}}
+</div>
+<div></div>
+<div>
+    {{!-- {{#each user.blogs as |blog|}}
+        <span>{{blog.title}}</span>
+        <span>{{moment-format blog.publishDate 'MM-DD-YYYY'}}</span>,
+    {{/each}} --}}
+    <div>
+        <label>Number of posts: &nbsp;<strong>{{user.blogsCount}}</strong></label>
+        {{!-- <button {{action (route-action "deleteUser" user)}}>Delete</button> --}}
+    </div>
+    <div>
+        <span>Date joined: &nbsp;<strong>{{moment-format user.dateJoined 'DD-MM-YYYY'}}</strong></span>
+        {{#if showIcons}}
+            {{fa-icon "trash" click=(route-action "deleteUser" user)}}
+            {{#link-to "users.show" user.id}}
+                {{fa-icon "info-circle"}}
+            {{/link-to}}
+        {{/if}}
+        {{#link-to "users.show.edit" user.id}}
+            {{fa-icon "pencil"}}
+        {{/link-to}}
+    </div>
+</div>
