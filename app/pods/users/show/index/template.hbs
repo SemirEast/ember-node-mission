@@ -1,0 +1,30 @@
+<h1>{{model.fullName}}'s details</h1>
+{{!-- <div>
+  <img class="profile-img img-responsive" src="{{model.image}}"><br>
+  <label>Age: </label> {{model.age}}<br>
+  <label>City: </label> {{model.city}}
+</div> --}}
+{{#card-item}}
+  {{card-item/image img=model.image}}
+  {{card-item/details user=model}}
+{{/card-item}}
+
+
+<div>
+  {{#link-to "users"}}
+    <button class="primary-btn">Back</button>
+  {{/link-to}}
+  <button {{action (route-action "deleteUser" model)}} class="danger-btn">Delete {{model.firstName}}</button>
+  {{#link-to "users.show.addblog"}}
+    <button class="save-btn">Add new blogpost</button>
+  {{/link-to}}
+</div>
+
+<div>
+  <h3>Blog posts</h3>
+  {{#each model.blogs as |blog|}}
+    {{!-- <span>{{blog.title}}</span>
+    <span>{{moment-format blog.publishDate 'MM-DD-YYYY'}}</span><br> --}}
+    {{blog-post post=blog onDelete=(action "deleteBlogpost" blog) updateBlogpost=(action "updateBlogpost" blog)}}
+  {{/each}}
+</div>

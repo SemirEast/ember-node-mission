@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel() {
-    this.replaceWith('users');
+  model() {
+    return this.modelFor('users.show');
   }
 });

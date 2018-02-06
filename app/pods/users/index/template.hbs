@@ -1,4 +1,10 @@
 <center><h1>Authors</h1></center>
+<center>
+    {{#link-to "users.new"}}
+        <button class="save-btn">Add new author</button>
+    {{/link-to}}
+</center>
+<br>
 <div class="cards-wrapper">
     {{#each model as |user|}}
         {{#card-item}}

@@ -10,6 +10,11 @@ export default function() {
   this.get('/blogs/:id');
   this.del('/blogs/:id');
   this.patch('/blogs/:id');
+  this.post('/users');
+  this.post('/blogs');
+  this.get('/comments/:id');
+  this.get('/comments');
+  this.post('/comments');
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

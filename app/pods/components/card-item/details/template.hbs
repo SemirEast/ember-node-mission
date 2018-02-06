@@ -22,8 +22,10 @@
                 {{fa-icon "info-circle"}}
             {{/link-to}}
         {{/if}}
-        {{#link-to "users.show.edit" user.id}}
-            {{fa-icon "pencil"}}
-        {{/link-to}}
+        {{#unless hideEdit}}
+            {{#link-to "users.show.edit" user.id}}
+                {{fa-icon "pencil"}}
+            {{/link-to}}
+        {{/unless}}
     </div>
 </div>

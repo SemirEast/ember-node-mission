@@ -1,0 +1,8 @@
+<h1>Add blogpost</h1>
+
+{{#do-form blog submit=(action 'addBlogpost') as |form|}}
+    {{form.input-field 'title' label='Title: ' classNames='form-row-control'}}
+    {{form.input-field 'text' label='Text: ' classNames='form-row-control'}}
+
+    <button type='submit' class="save-btn">Save</button>
+{{/do-form}}

@@ -1,0 +1,37 @@
+<h1>Blog details</h1>
+{{#link-to "users.show" blog.author.id}}
+    <button class="primary-btn _addMarginBot">Go back</button>
+{{/link-to}}
+{{#link-to "users.show.blog-details.edit"}}
+    <button class="save-btn _addMarginBot">Edit</button>
+{{/link-to}}
+
+{{blog-post post=blog hideControls=true}}
+
+{{!-- {{#do-form buffer submit=(action 'updateBlog') as |form|}}
+    {{form.input-field 'title' label='Title: ' classNames='form-row-control'}}
+    {{form.input-field 'text' controlType='textarea' label='Text: ' classNames='form-textarea'}}
+
+    <button type='submit' class="save-btn">Update</button>
+{{/do-form}} --}}
+<h1>Comments</h1>
+{{!-- <button class="save-btn">Add new comment</button> --}}
+{{#unless isExpandedCreate}}
+    <button class="save-btn _addMarginBot" {{action (toggle "isExpandedCreate" this)}}>Add new comment</button>
+{{/unless}}
+<br>
+{{#if isExpandedCreate}}
+    {{#do-form buffer submit=(action 'addComment') as |form|}}
+        {{log buffer}}
+        {{#form.do-field "author" as |field|}}
+            {{field.do-label "Author: "}}
+            {{field.do-control "select" options=(sort-by "fullName" authors) optionLabelPath="fullName"}}
+        {{/form.do-field}}
+        {{form.input-field 'text' controlType='textarea' label='Content: ' classNames='form-textarea'}}
+
+        <button type='submit' class="save-btn _addMarginBot">Add</button>
+    {{/do-form}}
+{{/if}}
+{{#each comments as |comment|}}
+    {{comment-post comment=comment}}
+{{/each}}

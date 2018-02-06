@@ -16,5 +16,6 @@ export default DS.Model.extend({
     return count ? count : 0;
   }),
   jobTitle: DS.attr('string'),
-  dateJoined: DS.attr('date')
+  dateJoined: DS.attr('date'),
+  comments: DS.hasMany('comment')
 });

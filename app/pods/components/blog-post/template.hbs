@@ -1,5 +1,13 @@
 <div>
-    <span>{{post.title}}</span>
+    <div>
+    <span>
+        {{post.title}} &nbsp;</span>
+        {{#unless hideControls}}
+            {{#link-to "users.show.blog-details" post.id}}
+                {{fa-icon "info"}}
+            {{/link-to}}
+        {{/unless}}
+    </div>
     <span>{{moment-format post.publishDate 'DD-MM-YYYY'}}</span>
 </div>
 <div>
@@ -11,9 +19,11 @@
     </p>
     {{/if}}
 </div>
-<div>
-    <button {{action onDelete}}>Delete</button>
-    <button {{action (toggle "isExpandedUpdate" this)}} {{action "updatePost" isExpandedUpdate post}}>
-        {{if isExpandedUpdate "Update" "Edit"}}
-    </button>
-</div>
+{{#unless hideControls}}
+    <div>
+        <button class="danger-btn -small" {{action onDelete}}>Delete</button>
+        <button class="save-btn -small" {{action (toggle "isExpandedUpdate" this)}} {{action "updatePost" isExpandedUpdate post}}>
+            {{if isExpandedUpdate "Update" "Edit"}}
+        </button>
+    </div>
+{{/unless}}

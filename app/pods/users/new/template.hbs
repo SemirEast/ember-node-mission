@@ -1,0 +1,14 @@
+<h1>Add new author</h1>
+
+{{#do-form user submit=(action 'addAuthor') as |form|}}
+  {{form.input-field 'firstName' label='First Name: ' classNames='form-row-control'}}
+  {{form.input-field 'lastName' label='Last Name: ' classNames='form-row-control'}}
+  {{form.input-field 'age' label='Age: ' controlType='number' classNames='form-row-control'}}
+  {{form.input-field 'jobTitle' label='Job: ' classNames='form-row-control'}}
+  {{form.input-field 'city' label='From: ' classNames='form-row-control'}}
+
+  <button type='submit' class="save-btn">Save</button>
+  {{#link-to "users"}}
+      <button class="primary-btn">Back</button>
+  {{/link-to}}
+{{/do-form}}
