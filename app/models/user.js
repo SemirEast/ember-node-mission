@@ -7,7 +7,7 @@ export default DS.Model.extend({
   age: DS.attr('number'),
   city: DS.attr('string'),
   image: DS.attr('string'),
-  fullName: Ember.computed('firstName', 'lastName', function() {
+  fullName: computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
   blogs: DS.hasMany('blog'),

@@ -1,13 +1,13 @@
 <center><h1>Authors</h1></center>
 <center>
     {{#link-to "users.new"}}
-        <button class="save-btn">Add new author</button>
+        <button class="save-btn" data-test-add-user>Add new author</button>
     {{/link-to}}
 </center>
 <br>
 <div class="cards-wrapper">
-    {{#each model as |user|}}
-        {{#card-item}}
+    {{#each (sort-by "dateJoined:desc" model) as |user|}}
+        {{#card-item data-test-user-id=user.id}}
             {{card-item/image img=user.image}}
             {{card-item/details user=user showIcons=true}}
         {{/card-item}}

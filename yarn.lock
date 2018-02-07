@@ -1634,7 +1634,7 @@ broccoli-sri-hash@^2.1.0:
     sri-toolbox "^0.2.0"
     symlink-or-copy "^1.0.1"
 
-broccoli-stew@^1.2.0, broccoli-stew@^1.3.3, broccoli-stew@^1.5.0:
+broccoli-stew@^1.2.0, broccoli-stew@^1.3.3, broccoli-stew@^1.4.0, broccoli-stew@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/broccoli-stew/-/broccoli-stew-1.5.0.tgz#d7af8c18511dce510e49d308a62e5977f461883c"
   dependencies:
@@ -1809,6 +1809,10 @@ caseless@~0.11.0:
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
+
+ceibo@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ceibo/-/ceibo-2.0.0.tgz#9a61eb054a91c09934588d4e45d9dd2c3bf04eee"
 
 center-align@^0.1.1:
   version "0.1.3"
@@ -2622,6 +2626,17 @@ ember-cli-normalize-entity-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
+ember-cli-page-object@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-page-object/-/ember-cli-page-object-1.14.0.tgz#fcf06b3b1ee6454196a29bc674abe8b65aa0adbd"
+  dependencies:
+    ceibo "~2.0.0"
+    ember-cli-babel "^6.6.0"
+    ember-cli-node-assets "^0.2.2"
+    ember-native-dom-helpers "^0.5.3"
+    jquery "^3.2.1"
+    rsvp "^4.7.0"
+
 ember-cli-path-utils@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-path-utils/-/ember-cli-path-utils-1.0.0.tgz#4e39af8b55301cddc5017739b77a804fba2071ed"
@@ -2991,6 +3006,13 @@ ember-moment@^7.6.0:
     ember-getowner-polyfill "^2.0.1"
     ember-macro-helpers "^0.17.0"
 
+ember-native-dom-helpers@^0.5.3:
+  version "0.5.10"
+  resolved "https://registry.yarnpkg.com/ember-native-dom-helpers/-/ember-native-dom-helpers-0.5.10.tgz#9c7172e4ddfa5dd86830c46a936e2f8eca3e5896"
+  dependencies:
+    broccoli-funnel "^1.1.0"
+    ember-cli-babel "^6.6.0"
+
 ember-one-way-controls@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-one-way-controls/-/ember-one-way-controls-2.0.1.tgz#45bd9367554f69e10fa37dfac8f1a6c72360a7f1"
@@ -3073,6 +3095,14 @@ ember-source@~2.14.0:
     rsvp "^3.5.0"
     simple-dom "^0.3.0"
     simple-html-tokenizer "^0.4.1"
+
+ember-test-selectors@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/ember-test-selectors/-/ember-test-selectors-0.3.8.tgz#1e8ae3e78c64bacc4bbfe87f9973c85805699db2"
+  dependencies:
+    broccoli-stew "^1.4.0"
+    ember-cli-babel "^6.8.2"
+    ember-cli-version-checker "^2.0.0"
 
 ember-truth-helpers@^2.0.0:
   version "2.0.0"

@@ -17,7 +17,6 @@ export default Controller.extend({
       });
     },
     updateBlogpost(post) {
-      console.log(post);
       post.save().then(() => {
         post.reload();
       });

@@ -7,6 +7,9 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     autoprefixer: {
       browsers: ['last 2 version']
+    },
+    'ember-cli-babel': {
+      includePolyfill: true
     }
   });
 
