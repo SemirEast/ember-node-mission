@@ -17,15 +17,21 @@
     <div>
         <span>Date joined: &nbsp;<strong>{{moment-format user.dateJoined 'DD-MM-YYYY'}}</strong></span>
         {{#if showIcons}}
-            {{fa-icon "trash" click=(route-action "deleteUser" user)}}
-            {{#link-to "users.show" user.id}}
-                {{fa-icon "info-circle"}}
-            {{/link-to}}
+            <button class="iconBtn-wrapper" data-test-delete-user>
+                {{fa-icon "trash" click=(route-action "deleteUser" user)}}
+            </button>
+            <button class="iconBtn-wrapper" data-test-show-user>
+                {{#link-to "users.show" user.id}}
+                    {{fa-icon "info-circle"}}
+                {{/link-to}}
+            </button>
         {{/if}}
-        {{#unless hideEdit}}
-            {{#link-to "users.show.edit" user.id}}
-                {{fa-icon "pencil"}}
-            {{/link-to}}
-        {{/unless}}
+        <button class="iconBtn-wrapper" data-test-edit-user>
+            {{#unless hideEdit}}
+                {{#link-to "users.show.edit" user.id}}
+                    {{fa-icon "pencil"}}
+                {{/link-to}}
+            {{/unless}}
+        </button>
     </div>
 </div>

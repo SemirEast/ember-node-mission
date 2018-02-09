@@ -6,7 +6,7 @@ import faker from 'faker';
 
 moduleForAcceptance('Acceptance | users/new', {
   beforeEach() {
-    //let author = server.create('user');
+    server.create('user');
   }
 });
 
@@ -42,3 +42,38 @@ test('add user', async function(assert) {
   assert.equal(userPage.users(0).nameAndAge, nameAndAge, 'Correct firstName set')
   assert.equal(userPage.users().count, userCount + 1, 'User is visible')
 });
+
+test('delete user', async function(assert) {
+  assert.expect(2);
+
+  await userPage.visit();
+  assert.equal(currentURL(), '/users', 'navigated to /users');
+
+  let userCount = userPage.users().count;
+
+  await userPage.users(0).deleteUserButton();
+
+  assert.equal(userPage.users().count, userCount - 1);
+});
+
+test('show user details', async function(assert) {
+  assert.expect(2);
+
+  await userPage.visit();
+  assert.equal(currentURL(), '/users', 'navigated to /users');
+
+  await userPage.users(0).showUserButton();
+
+  assert.equal(currentURL(), '/users/show/1');
+});
+
+test('show edit user', async function(assert) {
+  assert.expect(2);
+
+  await userPage.visit();
+  assert.equal(currentURL(), '/users', 'navigated to /users');
+
+  await userPage.users(0).editUserButton();
+
+  assert.equal(currentURL(), '/users/show/1/edit');
+})

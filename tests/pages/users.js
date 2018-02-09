@@ -16,7 +16,10 @@ import {
       lastName: text('[data-test-user-lastName] > .lastName'),
       age: text('[data-test-user-age] > .age'),
       jobTitle: text('[data-test-user.jobTitle] > .jobTitle'),
-      city: text('[data-test-user-city] > .city')
+      city: text('[data-test-user-city] > .city'),
+      deleteUserButton: clickable('[data-test-delete-user] > i'),
+      showUserButton: clickable('[data-test-show-user] > a > i'),
+      editUserButton: clickable('[data-test-edit-user] > a > i')
     }
   })
  })
